@@ -33,7 +33,7 @@
                     "type": "integer",
                     "format": "directory-path",
                     "description": "The number of reads to subsample down to, if set to 0 subsampling will be skipped.",
-                    "fa_icon": "fa-solid fa-arrow-down"
+                    "fa_icon": "fas fa-arrow-down"
                 },
                 "multiqc_title": {
                     "type": "string",
