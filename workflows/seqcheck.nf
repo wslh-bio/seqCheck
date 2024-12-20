@@ -5,6 +5,7 @@
 */
 include { FASTQC                 } from '../modules/nf-core/fastqc/main'
 include { MULTIQC                } from '../modules/nf-core/multiqc/main'
+include { SEQTK_SAMPLE                  } from '../modules/local/seqtk/main'
 include { paramsSummaryMap       } from 'plugin/nf-schema'
 include { paramsSummaryMultiqc   } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
@@ -24,6 +25,19 @@ workflow SEQCHECK {
 
     ch_versions = Channel.empty()
     ch_multiqc_files = Channel.empty()
+
+
+    //
+    // MODULE: Run Seqtk
+    //
+    if(params.subsampleN > 0){
+        SEQTK_SAMPLE (
+            ch_samplesheet
+        )
+        ch_versions = ch_versions.mix(SEQTK_SAMPLE.out.versions.first())
+    }
+
+
     //
     // MODULE: Run FastQC
     //

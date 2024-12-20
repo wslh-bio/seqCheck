@@ -10,7 +10,7 @@
             "type": "object",
             "fa_icon": "fas fa-terminal",
             "description": "Define where the pipeline should find input data and save output data.",
-            "required": ["input", "outdir"],
+            "required": ["input", "outdir","subsampleN"],
             "properties": {
                 "input": {
                     "type": "string",
@@ -29,11 +29,19 @@
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
                     "fa_icon": "fas fa-folder-open"
                 },
+                "subsampleN": {
+                    "type": "integer",
+                    "format": "directory-path",
+                    "description": "The number of reads to subsample down to, if set to 0 subsampling will be skipped.",
+                    "fa_icon": "fa-solid fa-arrow-down"
+                },
                 "multiqc_title": {
                     "type": "string",
                     "description": "MultiQC report title. Printed as page header, used for filename if not otherwise specified.",
-                    "fa_icon": "fas fa-file-signature"
+                    "fa_icon": "fas fa-file-signature",
+                    "default": "SeqCheck Results"
                 }
+
             }
         },
         "institutional_config_options": {
