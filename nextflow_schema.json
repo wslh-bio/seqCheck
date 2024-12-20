@@ -31,7 +31,6 @@
                 },
                 "subsampleN": {
                     "type": "integer",
-                    "format": "directory-path",
                     "description": "The number of reads to subsample down to, if set to 0 subsampling will be skipped.",
                     "fa_icon": "fas fa-arrow-down"
                 },
