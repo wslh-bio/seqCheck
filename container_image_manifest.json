@@ -1,0 +1,7 @@
+{
+    "manifest" : [
+        "quay/biocontainers/fastqc:0.12.1--hdfd78af_0",
+        "quay/biocontainers/multiqc:1.25.1--pyhdfd78af_0",
+        "quay/staphb/seqtk:1.4"
+    ]
+}

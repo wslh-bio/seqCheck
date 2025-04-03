@@ -1,0 +1,11 @@
+{
+    "input": {
+        "description": "Path to comma-separated file containing information about the samples in the experiment."
+    },
+    "outdir": {
+        "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure."
+    },
+    "subsampleN": {
+        "description": "The number of reads to subsample down to, if set to 0 subsampling will be skipped."
+    }
+}
