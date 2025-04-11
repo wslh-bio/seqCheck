@@ -30,8 +30,8 @@
                     "fa_icon": "fas fa-folder-open"
                 },
                 "subsampleN": {
-                    "type": "integer",
-                    "description": "The number of reads to subsample down to, if set to 0 subsampling will be skipped.",
+                    "type": "string",
+                    "description": "The number of reads to subsample down to, if empty then subsampling will be skipped.",
                     "fa_icon": "fas fa-arrow-down"
                 },
                 "multiqc_title": {

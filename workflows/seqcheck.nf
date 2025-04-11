@@ -55,7 +55,7 @@ workflow SEQCHECK {
     //
     // MODULE: Run Seqtk
     //
-    if(params.subsampleN > 0){
+    if(params.subsampleN){
         SEQTK_SAMPLE (
             INPUT_CHECK.out.reads
         )
