@@ -27,4 +27,15 @@ process SEQTK_SAMPLE {
     END_VERSIONS
     """
 
+    stub:
+    """
+    mkdir subsampled
+    touch "subsampled/fake_subsampled_1.fastq.gz"
+    touch "subsampled/fake_subsampled_2.fastq.gz"
+    cat <<-END_VERSIONS > versions.yml
+    "${task.process}":
+        seqtk: \$( seqtk 2>&1 >/dev/null | sed -n -e "s/Version: //g;3p" )
+    END_VERSIONS
+    """
+
 }
